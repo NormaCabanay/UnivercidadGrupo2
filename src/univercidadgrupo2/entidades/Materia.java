@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package univercidadgrupo2.entidades;
 
-/**
- *
- * @author norma
- */
+
 public class Materia {
-      private int idMateria;
+    private int idMateria;
     private String nombre;
     private int anioMateria;
     private boolean estado;

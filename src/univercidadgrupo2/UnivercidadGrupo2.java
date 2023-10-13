@@ -1,21 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package univercidadgrupo2;
 
-/**
- *
- * @author norma
- */
+import java.time.LocalDate;
+import univercidadgrupo2.accesoDatos.AlumnoData;
+import univercidadgrupo2.entidades.Alumno;
+
+
 public class UnivercidadGrupo2 {
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        Alumno Miguel = new Alumno(238745679,"Sanchez","Angel", LocalDate.of(1990,2,12),true);
+        AlumnoData alumn= new AlumnoData();
+        alumn.guardarAlumno(Miguel);
     }
     
 }

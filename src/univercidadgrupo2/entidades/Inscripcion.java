@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package univercidadgrupo2.entidades;
 
-/**
- *
- * @author norma
- */
+
 public class Inscripcion {
     private int idInscripcion;
     private double nota;
@@ -62,6 +55,7 @@ public class Inscripcion {
     public void setMateria(Materia materia) {
         this.materia = materia;
     }
+    
 
     @Override
     public String toString() {
