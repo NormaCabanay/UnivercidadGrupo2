@@ -19,7 +19,7 @@ public class AlumnoData {
     public AlumnoData() {
         con = Conexion.getConexion();
     }
-   public void guardarAlumno(Alumno alumno){  //agrego alumno
+   public void guardarAlumno(Alumno alumno){  //agrego alumno sentencia insert
        String sql= "INSERT INTO alumno(dni,apellido,nombre,fechaNac, estado)" 
                + "VALUES(?,?,?,?,?)";
         try {
@@ -44,7 +44,7 @@ public class AlumnoData {
     
     
     
-    public void modificarAlumno(Alumno alumno){ //mofifico alumno
+    public void modificarAlumno(Alumno alumno){ //mofifico alumno sencia update
        String sql= "UPDATE alumno SET dni=?,apellido =?,nombre =?, fechaNac =?"
                + "WHERE idAlumno=?";
         try {
@@ -65,7 +65,7 @@ public class AlumnoData {
         }
    }
     
-    public void eliminarAlumno(Alumno alumno){ // elimino alumno
+    public void eliminarAlumno(Alumno alumno){ // elimino alumno sentencia update
        String sql= "UPDATE alumno SET estado = 0 WHERE idAlumno=?";
         try {
             PreparedStatement ps= con.prepareStatement(sql);
@@ -81,7 +81,7 @@ public class AlumnoData {
         }
    }
     
-    public Alumno buscarAlumno(int id){
+    public Alumno buscarAlumno(int id){  //lista alumnos con id = 2 sentencia select
         String sql= "SELECT dni, apellido, nombre,fechaNac FROM alumno WHERE idAlumno= ? AND estado = 1";
         Alumno alumno = null;
          try {
@@ -97,7 +97,7 @@ public class AlumnoData {
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNac").toLocalDate());
                 alumno.setEstado(true);
-            
+            }else{
                 JOptionPane.showMessageDialog(null,"Alumno No encontrado");
                 ps.close();
             }
